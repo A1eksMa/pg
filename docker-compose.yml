@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: pg
+    image: postgres:17.2
+    environment:
+      POSTGRES_DB: "test_db"
+      POSTGRES_USER: "debian"
+      POSTGRES_PASSWORD: "Debian12"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+      - data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  data:
