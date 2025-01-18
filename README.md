@@ -6,7 +6,7 @@
 ```bash
 apt update && apt upgrade -y
 ```
-To set up a cron task to update at 24:00 every day, you can use the following bash script:
+To set up a cron task to run updates at 24:00 every day:
 ```bash
 # Open the crontab editor
 crontab -e
