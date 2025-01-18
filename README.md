@@ -3,9 +3,30 @@
 ### Create strong passwords
 ### Generate an SSH key pair
 ### Keep your server updated
-```shell
+```bash
 apt update && apt upgrade -y
 ```
+To set up a cron task to update at 24:00 every day, you can use the following bash script:
+```bash
+# Open the crontab editor
+crontab -e
+```
+This will open the crontab editor in the default text editor. Add the following line to the file:
+```bash
+0 0 * * * apt update && apt upgrade -y
+```
+Save and exit the editor.
+
+**Script**
+
+```bash
+#!/bin/bash
+apt update && apt upgrade -y
+(crontab -l ; echo "0 0 * * * apt update && apt upgrade -y") | crontab -
+```
+This command appends the new cron job to the existing crontab file
+
+
 ### Use firewalls
 ### Consider using Linux as your web server operating system
 ### Limit superuser/root access
