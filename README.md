@@ -3,8 +3,11 @@
 ### Create strong passwords
 ### Generate an SSH key pair
 ### Keep your server updated
+To update packages on a Linux server:
 ```bash
-apt update && apt upgrade -y
+apt update
+apt upgrade -y
+apt autoremove
 ```
 To set up a cron task to run updates at 24:00 every day:
 ```bash
